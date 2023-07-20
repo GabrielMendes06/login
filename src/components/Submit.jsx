@@ -34,11 +34,11 @@ function Submit(props) {
     }
 
   return (
-    <div>
+    <div className="content-inputs">
       <Inputs
         description={"email"}
         id={"iemail"}
-        placeHolder={"Digite seu email"}
+        placeHolder={"Type your email"}
         autoComplete={"email"}
         iconName={"person"}
         handleResult={updateResultEmail}
@@ -46,7 +46,7 @@ function Submit(props) {
       <Inputs
         description={"password"}
         id={"isen"}
-        placeHolder={"Digite sua senha"}
+        placeHolder={"Type your password"}
         autoComplete={"current-password"}
         iconName={"key"}
         handleResult={updateResultPassword}

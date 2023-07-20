@@ -1,5 +1,4 @@
 import Title from "../components/Title"
-import Inputs from "../components/Inputs"
 import Submit from "../components/Submit"
 
 function Main() {
@@ -11,17 +10,21 @@ function Main() {
                 <p>Senha = 123456</p>
             </div>
             <section className="login">
-                <div className="imagem">
+                <div className="welcome">
+                    <Title 
+                    title={"Welcome Back!"}
+                    idname={"title-welcome"}/>
+                    <p className="welcome-paragraph">You can sign in you acess with your existing account</p>
                 </div>
                 <div className="formulario">
-                    <Title />
+                    <Title title={"Sign In"}/>
                     <form 
                     action="login.php" 
                     method="post" 
                     autoComplete="on">                      
                     </form>
                     <Submit 
-                        value={"Entrar"}
+                        value={"Sign In"}
                     />                    
                 </div>
             </section>

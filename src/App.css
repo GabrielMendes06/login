@@ -1,13 +1,5 @@
 @charset "UTF-8";
 
-:root{
-    --cor0: #779EE6;
-    --cor1: #6C72F0;
-    --cor2: #A08BD9;
-    --cor3: #7838A6;
-    --cor4: #DE9AE6;
-}
-
 *{
     margin: 0;
     padding: 0;
@@ -15,18 +7,11 @@
     box-sizing: border-box;
 }
 
-body, html{
-    background-image: linear-gradient(to top,#417cfc , #8bb0ff, #6a98fd );
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
 main {
     height: 100vh;
     width: 100vw;
     position: relative;
+    background-color: lightgray;
 }
 
 .login {   
@@ -43,49 +28,39 @@ main {
     transition-timing-function: ease;
     transform: translate(-50%, -50%);
     min-height: 350px;
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.507);
 }
 
-.imagem {
-    background-image: url(./imagens/fundo-login.jpg);
-    height: 200px;
-    background-size: cover;
-    background-position: left bottom;
-    background-repeat: no-repeat;
-    display: block;
+.welcome {
+    background-color: #6dabf1;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .formulario {
     padding: 7px;
     display: block;
-}
-
-.formulario > h1{
-    text-align: center;
-    padding: 5px;
-    margin-bottom: 10px;
-}
-.formulario > p{
-    font-size: 0.8em;
-    margin-bottom: 25px;
-}
-
-.formulario > form{
-    font-size: 0.7em;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .inputs {
-  font-size: 1.1em;
+  font-size: 0.8em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   width: calc(100% - 40px);
   height: 100%;
   border: none;
   border-radius: 0px 10px 10px 0px;
   padding: 10px;
-}
-
-.incorrect-user {
-    color: red;
-    text-align: center;
-    padding: 3px;
 }
 
 .inputs:hover{
@@ -98,14 +73,13 @@ main {
 }
 
 .campo{
-    background-color: #5986e9;
-    width: 100%;
+    background-color: #6dabf1;
     display: flex;
     align-items: center;
     border-radius: 10px;
     height: 40px;
     margin: 2px 0px 2px 0px;
-    border: 1px solid #464a9e;
+    border: 1px solid #3983d8;
     margin-top: 5px;
 }
 
@@ -114,24 +88,44 @@ main {
 }
 
 .esen {
-  display: block;
-  width: 100%;
+  width: 50%;
   height: 40px;
-  background-color: #228f4f;
+  background-color: #6dabf1;
   color: white;
   border-radius: 10px;
-  border: 1px solid #10773b; 
+  border: 1px solid #3983d8; 
   margin-top: 10px;
+  margin: auto;
 }
 
 .esen:hover {
-    background-color: #1f7944;
+    background-color: #4a85c9;
     cursor: pointer;
+}
+
+.content-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .title {
     font-size: 1.5em;
-    margin-top: 20px;
+    margin: 30px;
+    color: rgb(107, 107, 107);
+}
+
+#title-welcome {
+    color: white;
+    margin-top: -5px;
+    font-size: 2.2em;
+}
+
+.welcome-paragraph {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 260px;
 }
 
 .header {
@@ -171,22 +165,9 @@ main {
         height: 40vh;
     }
 
-    .imagem{
-        float: right;
-        width: 30%;
-        height: 100%;
-    }
-
     .formulario{
-        float: left;
-        width: 70%;
+        width: 50%;
     }
-
-    .formulario > p{
-        font-size: 1.2em;
-        padding: 10px;
-    }
-
 
     .title {
         font-size: 1.5em;
@@ -199,19 +180,6 @@ main {
         height: 45vh;
     }
 
-    
-    .imagem{
-        float: right;
-        width: 40%;
-        height: 100%;
-    }
-
-    .formulario{
-        width: 60%;
-        height: 100%;
-        float: left;
-    }
-
     .title {
         font-size: 1.7em;
     }
@@ -220,5 +188,37 @@ main {
         font-size: 1.3em;
         padding: 10px;
         margin-bottom: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .login {
+        flex-direction: column;
+
+    }
+
+    .welcome {
+        width: 100%;
+        text-align: center;
+        font-size: 0.8em;
+        max-height: 40%;
+    }
+
+    .title {
+        margin-top: 0px;
+    }
+
+    #title-welcome {
+        margin-bottom: 10px;
+    }
+
+    .welcome-paragraph {
+        max-width: 200px;
+        font-size: 1.2em;
+    }
+
+    .formulario {
+        width: 100%;
+        
     }
 }
