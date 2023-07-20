@@ -6,8 +6,7 @@ function Main() {
     return(
         <main>
             <div className="header">
-                <p>Email = bemvindo.visitante@outlook.com</p>
-                <p>Senha = 123456</p>
+                
             </div>
             <section className="login">
                 <div className="welcome">
