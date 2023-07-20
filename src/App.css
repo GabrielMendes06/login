@@ -28,7 +28,7 @@ main {
     transition-timing-function: ease;
     transform: translate(-50%, -50%);
     min-height: 350px;
-    display: flex;
+    display: flex; 
 }
 
 .welcome {
