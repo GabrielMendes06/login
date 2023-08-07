@@ -127,19 +127,6 @@ main {
     max-width: 260px;
 }
 
-.header {
-    background-color: white;
-    max-width: 400px;
-    text-align: center;
-    border-radius: 10px;
-    margin: auto;
-    position: absolute;
-    left: 50%;
-    top: 5%;
-    padding: 10px;
-    transform: translate(-50%, 25%);
-}
-
 .container {
     background-color: white;
     width: 25%;

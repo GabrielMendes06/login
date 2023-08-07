@@ -5,10 +5,6 @@ function Main() {
 
     return(
         <main>
-            <div className="header">
-                <p>Email = bemvindo.visitante@outlook.com</p>
-                <p>Senha = 123456</p>
-            </div>
             <section className="login">
                 <div className="welcome">
                     <Title 
@@ -17,7 +13,7 @@ function Main() {
                     <p className="welcome-paragraph">You can sign in you acess with your existing account</p>
                 </div>
                 <div className="formulario">
-                    <Title title={"Sign In"}/>
+                    <Title title={"Sign In"}/> 
                     <form 
                     action="login.php" 
                     method="post" 
