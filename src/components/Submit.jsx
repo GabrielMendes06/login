@@ -1,11 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import Inputs from "./Inputs";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 function Submit(props) {
-
-  const [data, setData] = useState([])
 
   const submitLogin = () => {
     axios.post('https://nodecruddeploy-api.onrender.com/api/users', {
@@ -14,15 +12,16 @@ function Submit(props) {
     })
     .then(function (response) {
       console.log(response);
+      navigate("/private")
     })
     .catch(function (error) {
+      setIopacity(1)
       console.log(error);
     });  
   }
 
     const [resultEmail, setResultEmail] = useState("")
     const [resultPassword, setResultPassword] = useState("")
-    const [boolean, setBoolean] = useState()
     const navigate = useNavigate()
     const [iopacity, setIopacity] = useState(0)
 
