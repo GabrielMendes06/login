@@ -1,7 +1,8 @@
 import { redirect, useNavigate } from "react-router-dom";
-import Inputs from "./Inputs";
+import Inputs from "./Input-text";
 import { useState } from "react";
 import axios from "axios";
+import Input from "./Input"
 
 function Submit(props) {
 
@@ -18,6 +19,10 @@ function Submit(props) {
       setIopacity(1)
       console.log(error);
     });  
+  }
+  
+  const navigatePage = () => {
+    navigate('/CreateAccount')
   }
 
     const [resultEmail, setResultEmail] = useState("")
@@ -52,13 +57,19 @@ function Submit(props) {
         handleResult={updateResultPassword}
       />
       <p className="incorrect-user" style={{opacity: iopacity}}>Email ou senha incorretos</p>
-      <input
-        type="submit"
-        value={props.value}
+      <div className="box-inputs">
+        <Input
+        function= {submitLogin}
+        value= {"Sign in"}
+        className= {"esen"}        
+        id={"sign"}
+        />
+        <Input
+        value={"Create account"}
         className={"esen"}
-        id={props.id}
-        onClick={submitLogin}
-      ></input>
+        function={navigatePage}
+        />
+      </div>
     </div>
   );
 }

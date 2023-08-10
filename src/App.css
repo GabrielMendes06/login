@@ -93,13 +93,24 @@ main {
   color: white;
   border-radius: 10px;
   border: 1px solid #3983d8; 
-  margin-top: 10px;
-  margin: auto;
+  margin: -15px 5px 0px 5px;
+  width: 120px;
 }
 
 .esen:hover {
     background-color: #4a85c9;
     cursor: pointer;
+}
+
+#sign {
+    background-color: rgb(255, 255, 255);
+    color: rgb(102, 98, 98);
+    border: 1px solid rgb(83, 83, 83);
+}
+
+#sign:hover {
+    background-color: rgb(187, 187, 187);
+    color: rgb(61, 61, 61);
 }
 
 .content-inputs {
@@ -148,6 +159,10 @@ main {
 .incorrect-user {
     color: red;
     padding: 10px;
+}
+
+.box-inputs {
+    display: flex;
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -211,5 +226,10 @@ main {
     .formulario {
         width: 100%;
         
+    }
+
+    .esen {
+        width: 110px;
+        margin: 0px 2px 0px 2px;
     }
 }

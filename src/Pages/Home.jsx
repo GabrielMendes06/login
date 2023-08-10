@@ -19,9 +19,8 @@ function Main() {
                     method="post" 
                     autoComplete="on">                      
                     </form>
-                    <Submit 
-                        value={"Sign In"}
-                    />                    
+                    <Submit />  
+                  
                 </div>
             </section>
         </main>
