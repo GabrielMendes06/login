@@ -145,6 +145,11 @@ main {
     padding: 15px;
 }
 
+.incorrect-user {
+    color: red;
+    padding: 10px;
+}
+
 @media screen and (min-width: 768px) and (max-width: 992px) {
     section.login {
         width: 80vw;

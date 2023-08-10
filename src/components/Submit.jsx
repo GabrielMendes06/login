@@ -1,8 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import Inputs from "./Inputs";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Submit(props) {
+
+  const [data, setData] = useState([])
+
+  const fetchData = () => {
+      axios.get('https://nodecruddeploy-api.onrender.com/api/users')
+      .then((response) => {
+          setData(response.data.result) 
+      }).catch((error) => {
+          console.log(error) 
+      })
+  }
 
     const [resultEmail, setResultEmail] = useState("")
     const [resultPassword, setResultPassword] = useState("")
@@ -18,18 +30,22 @@ function Submit(props) {
         setResultPassword(r)
     }
 
-    useEffect(() => {
-      submitLogin()
+    const user = data.find((userData) => userData.email === resultEmail && userData.password === resultPassword)
+
+    useEffect(() => { 
+      fetchData() 
+      console.log(data)  
     },[boolean])
 
     function submitLogin() {
-        if(resultEmail === "bemvindo.visitante@outlook.com" && resultPassword === "123456") {
+        if(user) {
           setBoolean(true)
           navigate("/private")
           console.log(boolean)
         } else {
           setBoolean(false)
           console.log(boolean)
+          setIopacity(1)
         }       
     }
 
