@@ -7,13 +7,17 @@ function Submit(props) {
 
   const [data, setData] = useState([])
 
-  const fetchData = () => {
-      axios.get('https://nodecruddeploy-api.onrender.com/api/users')
-      .then((response) => {
-          setData(response.data.result) 
-      }).catch((error) => {
-          console.log(error) 
-      })
+  const submitLogin = () => {
+    axios.post('http://localhost:6590/api/users', {
+      email: resultEmail, 
+      password: resultPassword
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });  
   }
 
     const [resultEmail, setResultEmail] = useState("")
@@ -28,24 +32,6 @@ function Submit(props) {
 
     const updateResultPassword = (r) => {
         setResultPassword(r)
-    }
-
-    const user = data.find((userData) => userData.email === resultEmail && userData.password === resultPassword)
-
-    useEffect(() => { 
-      fetchData() 
-    },[boolean])
-
-    function submitLogin() {
-        if(user) {
-          setBoolean(true)
-          navigate("/private")
-          console.log(boolean)
-        } else {
-          setBoolean(false)
-          console.log(boolean)
-          setIopacity(1)
-        }       
     }
 
   return (
