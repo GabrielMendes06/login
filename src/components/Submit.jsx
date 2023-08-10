@@ -8,7 +8,7 @@ function Submit(props) {
   const [data, setData] = useState([])
 
   const submitLogin = () => {
-    axios.post('http://localhost:6590/api/users', {
+    axios.post('https://nodecruddeploy-api.onrender.com/api/users', {
       email: resultEmail, 
       password: resultPassword
     })
