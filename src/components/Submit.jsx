@@ -34,7 +34,6 @@ function Submit(props) {
 
     useEffect(() => { 
       fetchData() 
-      console.log(data)  
     },[boolean])
 
     function submitLogin() {
