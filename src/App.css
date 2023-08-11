@@ -102,6 +102,10 @@ main {
   cursor: pointer;
 }
 
+#title-sign {
+  color: rgb(102, 98, 98);
+}
+
 #sign {
   background-color: rgb(255, 255, 255);
   color: rgb(102, 98, 98);
