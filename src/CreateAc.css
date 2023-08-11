@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+.body-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-account-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 25vh;
+  background-color: lightgray;
+  width: max-content;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.block-name-register {
+  display: flex;
+}
+
+.container-inputs {
+  padding: 10px;
+}
+
+.account-inputs {
+  width: 100%;
+}

@@ -8,9 +8,9 @@ function Inputs(props) {
   };
 
   useEffect(() => {
-    handleChange()
-    console.log(valor)
-  }, [valor])
+    handleChange();
+    console.log(valor);
+  }, [valor]);
 
   return (
     <div className="campo">
@@ -24,7 +24,7 @@ function Inputs(props) {
         required
         className="inputs"
         onChange={(e) => {
-          setValor(e.target.value)
+          setValor(e.target.value);
         }}
         value={valor}
       ></input>
