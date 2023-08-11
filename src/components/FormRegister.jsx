@@ -8,6 +8,9 @@ function FormRegister(props) {
         name="name"
         placeholder={props.placeholder}
         className={props.className}
+        onClick={props.onClick}
+        onChange={props.onChange}
+        required
       />
     </div>
   );

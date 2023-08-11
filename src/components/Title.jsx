@@ -1,7 +1,7 @@
 function Title(props) {
   return (
     <>
-      <h1 className="title" id={props.idname}>
+      <h1 id={props.id}>
         {props.title}
       </h1>
     </>

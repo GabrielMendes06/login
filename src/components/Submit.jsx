@@ -1,4 +1,4 @@
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Inputs from "./Input-text";
 import { useState } from "react";
 import axios from "axios";

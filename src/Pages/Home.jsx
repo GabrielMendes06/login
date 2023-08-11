@@ -15,7 +15,7 @@ function Main() {
           <Title title={"Sign In"} />
           <form action="login.php" method="post" autoComplete="on"></form>
           <Submit />
-        </div>
+        </div> 
       </section>
     </main>
   );

@@ -13,7 +13,22 @@
   flex-direction: column;
   margin-top: 25vh;
   background-color: lightgray;
-  width: max-content;
+  width: 450px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.253);
+}
+
+#title-form {
+  font-size: 2em;
+  margin: 20px 0px 0px 20px;
+  font-weight: bolder;
+}
+
+.p-form {
+  margin-left: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
 }
 
 .form {
@@ -32,4 +47,46 @@
 
 .account-inputs {
   width: 100%;
+}
+
+.all-inputs {
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.281);
+  font-size: 0.8em;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 8px;
+  background-color: rgba(228, 228, 228, 0.61);
+}
+
+.titles-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  font-size: 0.9em;
+  border-bottom: 1px solid rgba(88, 88, 88, 0.233);
+}
+
+.p-footer {
+  font-size: 0.7em;
+  margin-top: -20px;
+  width: 80%;
+}
+
+.button-register {
+  background-color: #6dabf1;
+  padding: 5px;
+  width: 150px;
+  border-radius: 10px;
+  color: white;
+  border: 1px solid rgba(35, 92, 214, 0.349);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  margin: 10px;
+}
+
+.button-register:hover {
+  background-color: #5487c2;
+  cursor: pointer;
+
 }
