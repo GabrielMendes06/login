@@ -1,6 +1,6 @@
 function FormRegister(props) {
   return (
-    <div className="container-inputs">
+    <div className="container-inputs" id="isolated-container">
       <input
         value={props.value}
         id={props.name}

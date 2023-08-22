@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import Inputs from "./Input-text";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 import Input from "./Input";
+import { ThemeContext } from "../context/ThemeContext";
 
 function Submit(props) {
   const submitLogin = () => {
@@ -14,6 +15,7 @@ function Submit(props) {
       .then(function (response) {
         console.log(response);
         navigate("/private");
+        toggleTheme(response.data.user.dataUser);
       })
       .catch(function (error) {
         setIopacity(1);
@@ -25,6 +27,7 @@ function Submit(props) {
     navigate("/CreateAccount");
   };
 
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const [resultEmail, setResultEmail] = useState("");
   const [resultPassword, setResultPassword] = useState("");
   const navigate = useNavigate();

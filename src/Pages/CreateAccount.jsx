@@ -11,15 +11,24 @@ function CreateAccount() {
   const[surname, setSurname] = useState("")
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [display, setDisplay] = useState("none")
+  const emailRegex = /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/
+
 
   const registerAccount = () => {
-    axios.post("https://nodecruddeploy-api.onrender.com/api/new-user", {
+    if (name && surname && email && password !== "" && emailRegex.test(email) == true) {
+      axios.post("https://nodecruddeploy-api.onrender.com/api/new-user", {
       name: name + " " + surname,
       email: email,
       password: password
     })
+    console.log("dale")
     navigate("/")
+  } else {
+    setDisplay("block")
+    return
   }
+}
 
   return (
     <div className="body-container">
@@ -29,7 +38,7 @@ function CreateAccount() {
           id={"title-form"}/>
           <p className="p-form">It's fast and easy</p>
         </div>
-        <form method="POST" className="form">
+        <div className="form">
           <div className="block-name-register">
             <FormRegister
               placeholder={"Name"}
@@ -65,17 +74,18 @@ function CreateAccount() {
               setPassword(e.target.value)
             }}
           />
-        </form>
-        <p className="p-footer">
-          Click register to create your registration within our database, it's
-          simple, easy and free.
-        </p>
-        <FormRegister 
-        type={"submit"}
-        value={"Register"} 
-        className={"button-register"}
-        onClick={registerAccount}
-        />
+          <p className="p-footer">
+            Click register to create your registration within our database, it's
+            simple, easy and free.
+          </p>
+          <p className="incorrect-user" style={{display: display}}>Check the text boxes and try again</p>
+          <FormRegister 
+          type={"submit"}
+          value={"Register"} 
+          className={"button-register"}
+          onClick={registerAccount}
+          />
+        </div>        
       </div>
     </div>
   );

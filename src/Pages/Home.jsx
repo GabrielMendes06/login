@@ -2,6 +2,7 @@ import Title from "../components/Title";
 import Submit from "../components/Submit";
 
 function Main() {
+
   return (
     <main>
       <section className="login">

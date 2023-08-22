@@ -9,7 +9,6 @@ function Inputs(props) {
 
   useEffect(() => {
     handleChange();
-    console.log(valor);
   }, [valor]);
 
   return (

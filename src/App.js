@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
-import "./CreateAc.css";
+import "./css/Home.css";
+import "./css/CreateAc.css";
+import "./css/Private.css"
 import Main from "./Pages/Home";
 import Private from "./Pages/Private";
 import CreateAccount from "./Pages/CreateAccount";
