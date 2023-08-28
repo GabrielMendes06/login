@@ -19,7 +19,7 @@ function Main() {
         </div> 
       </section>
     </main>
-  );
+  ); 
 }
 
 export default Main;
