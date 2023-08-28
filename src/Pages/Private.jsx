@@ -18,7 +18,7 @@ function Private() {
   const {id, toggleId} = useContext(GetId)
   const {openModal, setModalOpen} = useContext(OpenModal)
   const getUser = () => {
-    axios.get(`containers-us-west-61.railway.app/api/users/getuser/${id}`)
+    axios.get(`https://nodecruddeploy-api.onrender.com/api/users/getuser/${id}`)
     .then(function (response) {
       console.log(response)
       setBalance(response.data.balance)

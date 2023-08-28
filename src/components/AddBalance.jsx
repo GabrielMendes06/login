@@ -13,7 +13,7 @@ function AddBalance() {
   const {currentValue} = useContext(ThemeContext)
 
   const handleClick = () => {
-    axios.put(`containers-us-west-61.railway.app/api/users/newbalance/${id}`, {
+    axios.put(`https://nodecruddeploy-api.onrender.com/api/users/newbalance/${id}`, {
       balance: currentValue
     })
     .then(function (response) {

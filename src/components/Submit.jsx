@@ -7,7 +7,7 @@ import Input from "./Input";
 function Submit(props) {
   const submitLogin = () => {
     axios
-      .post("containers-us-west-61.railway.app/api/users", {
+      .post("https://nodecruddeploy-api.onrender.com/api/users", {
         email: resultEmail,
         password: resultPassword,
       })
