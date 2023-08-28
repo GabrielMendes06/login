@@ -17,12 +17,17 @@ function Private() {
   const [balance, setBalance] = useState(0)
   const {id, toggleId} = useContext(GetId)
   const {openModal, setModalOpen} = useContext(OpenModal)
-  const getUser = () => {
+  
+  const getUser = (id) => {
     axios.get(`https://nodecruddeploy-api.onrender.com/api/users/getuser/${id}`)
     .then(function (response) {
-      console.log(response)
       setBalance(response.data.balance)
-      setName(response.data.name)
+      let userName = localStorage.getItem("userName")
+      let id = localStorage.getItem("userId")
+      let balance = localStorage.getItem("balance")
+      localStorage.setItem("balance", response.data.balance)
+      localStorage.setItem("userId", response.data.id)
+      localStorage.setItem("userName", response.data.name)
     })
     .catch(function (error) {
       console.log(error);
@@ -30,7 +35,13 @@ function Private() {
   }
 
   useEffect(() => {
-    getUser()
+    let userName = localStorage.getItem("userName")
+    let id = localStorage.getItem("userId")
+    let balance = localStorage.getItem("balance")
+    toggleId(id)
+    setName(userName)
+    setBalance(balance)
+    getUser(id)
   },[openModal])
 
   return (
