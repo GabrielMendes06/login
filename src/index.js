@@ -2,17 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-
-import { ThemeProvider } from './context/ThemeContext';
+import { GetIdProvider } from './context/GetId'
+import { BalanceProvider } from './context/ThemeContext';
+import { ModalProvider } from './context/OpenModal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode> 
-    <ThemeProvider>
-      <BrowserRouter> 
-        <App />
-      </BrowserRouter>  
-    </ThemeProvider>
+    <ModalProvider>
+      <GetIdProvider>
+        <BalanceProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </BalanceProvider>
+      </GetIdProvider>
+    </ModalProvider>
   </React.StrictMode>
 );
 

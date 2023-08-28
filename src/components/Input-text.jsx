@@ -9,12 +9,13 @@ function Inputs(props) {
 
   useEffect(() => {
     handleChange();
-  }, [valor]);
+  },[valor]);
 
   return (
     <div className="campo">
       <span className="material-symbols-outlined">{props.iconName}</span>
       <input
+        ref={props.ref}
         type={props.description}
         name={props.description}
         id={props.id}

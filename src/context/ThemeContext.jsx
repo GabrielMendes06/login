@@ -1,15 +1,15 @@
 import { createContext, useState } from "react";
 
 export const ThemeContext = createContext();
-export const ThemeProvider = ({children}) => {
+export const BalanceProvider = ({children}) => {
 
-    const [theme, setTheme] = useState({});
-    const toggleTheme = (response) => {
-        setTheme(response)
+    const [currentValue, setCurrentValue] = useState({});
+    const toggleCurrentValue = (response) => {
+        setCurrentValue(response)
     }
 
     return(
-        <ThemeContext.Provider value={{theme, toggleTheme}}>
+        <ThemeContext.Provider value={{currentValue, setCurrentValue}}>
             {children}
         </ThemeContext.Provider>
     )

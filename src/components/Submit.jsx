@@ -1,9 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import Inputs from "./Input-text";
-import { useState, useContext } from "react";
+import { useState} from "react";
 import axios from "axios";
 import Input from "./Input";
-import { ThemeContext } from "../context/ThemeContext";
 
 function Submit(props) {
   const submitLogin = () => {
@@ -13,9 +12,10 @@ function Submit(props) {
         password: resultPassword,
       })
       .then(function (response) {
-        console.log(response);
-        navigate("/private");
-        toggleTheme(response.data.user.dataUser);
+        localStorage.setItem("userName", response.data.user.dataUser.name)
+        localStorage.setItem("userId", response.data.user.dataUser.id)
+        localStorage.setItem("balance", response.data.user.dataUser.balance)
+        navigate("/private");  
       })
       .catch(function (error) {
         setIopacity(1);
@@ -25,9 +25,9 @@ function Submit(props) {
 
   const navigatePage = () => {
     navigate("/CreateAccount");
+    console.log("clicou")
   };
 
-  const { theme, toggleTheme } = useContext(ThemeContext);
   const [resultEmail, setResultEmail] = useState("");
   const [resultPassword, setResultPassword] = useState("");
   const navigate = useNavigate();
@@ -64,15 +64,17 @@ function Submit(props) {
       </p>
       <div className="box-inputs">
         <Input
-          function={submitLogin}
+          type={"Submit"}
+          onClick={submitLogin}
           value={"Sign in"}
           className={"esen"}
           id={"sign"}
         />
         <Input
+          type={"Submit"}
           value={"Create account"}
           className={"esen"}
-          function={navigatePage}
+          onClick={navigatePage}
         />
       </div>
     </div>
