@@ -22,9 +22,6 @@ function Private() {
     axios.get(`https://nodecruddeploy-api.onrender.com/api/users/getuser/${id}`)
     .then(function (response) {
       setBalance(response.data.balance)
-      let userName = localStorage.getItem("userName")
-      let id = localStorage.getItem("userId")
-      let balance = localStorage.getItem("balance")
       localStorage.setItem("balance", response.data.balance)
       localStorage.setItem("userId", response.data.id)
       localStorage.setItem("userName", response.data.name)
@@ -51,7 +48,7 @@ function Private() {
           <img src={Home} id="home-icon" className="icon" alt="home" />
           <img src={Help} id="help" className="icon" alt="?" />
         </div>
-        <p className="header-paragraph">Wellcome, {name}</p>
+        <p className="header-paragraph">Welcome, {name}</p>
       </header>
       <div className="application-body">
         <InteractionsButton 
