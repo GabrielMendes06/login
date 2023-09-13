@@ -1,4 +1,4 @@
-import ESC from "../images/x.png"
+import ESC from "../images/simbolo-x.png"
 
 function Modal({ isOpen, setModalOpen, children }) {
   if (isOpen) {
@@ -14,7 +14,6 @@ function Modal({ isOpen, setModalOpen, children }) {
           </div>
       </div>
     );
-    return null
   }
 }
 

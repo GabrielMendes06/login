@@ -95,11 +95,13 @@ main {
   border: 1px solid #3983d8;
   margin: -15px 5px 0px 5px;
   width: 120px;
+  transition: 0.5s;
 }
 
 .esen:hover {
-  background-color: #4a85c9;
+  background-color: #2f5886;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 #title-sign {
@@ -110,11 +112,13 @@ main {
   background-color: rgb(255, 255, 255);
   color: rgb(102, 98, 98);
   border: 1px solid rgb(83, 83, 83);
+  transition: 0.5s;
 }
 
 #sign:hover {
-  background-color: rgb(187, 187, 187);
-  color: rgb(61, 61, 61);
+  background-color: rgb(122, 122, 122);
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
 }
 
 .content-inputs {
@@ -130,9 +134,8 @@ main {
   color: rgb(107, 107, 107);
 }
 
-#title-welcome {
+.title-welcome {
   color: white;
-  margin-top: -5px;
   font-size: 2.2em;
 }
 
@@ -190,26 +193,36 @@ main {
 @media screen and (max-width: 768px) {
   .login {
     flex-direction: column;
+    width: 100vw;
+    border-radius: 0px;
+    height: 100vh;
+    transition: 0.5s;
   }
 
   .welcome {
     width: 100%;
     text-align: center;
     font-size: 0.8em;
-    max-height: 40%;
+    height: 50%;
   }
 
-  .title {
-    margin-top: 0px;
+  .title-sign {
+    margin-top: 50px;
+    margin-bottom: 30px;
   }
 
-  #title-welcome {
+  .formulario {
+    justify-content: flex-start;
+  }
+
+  .title-welcome {
     margin-bottom: 10px;
+    font-size: 3em;
   }
 
   .welcome-paragraph {
     max-width: 200px;
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 
   .formulario {
@@ -217,7 +230,7 @@ main {
   }
 
   .esen {
-    width: 110px;
+    width: 130px;
     margin: 0px 2px 0px 2px;
   }
 }

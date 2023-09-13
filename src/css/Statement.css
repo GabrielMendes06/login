@@ -1,0 +1,150 @@
+.statement-header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.max-widh-parent {
+    width: 100vw;
+    background-image: linear-gradient(to right, #385175, #577DB5);
+}
+
+.button-mid-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.button-statement {
+    width: 33.3%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    margin: 20px;
+    margin-top: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    cursor: pointer;    
+}
+
+.button-statement:hover {
+    background-color: white;
+    color: #385175;
+    transition: 0,5s;
+}
+
+.button-statement:focus {
+    background-color: white;
+    color: #385175;
+    transition: 0,5s;
+}
+
+#exclusive-content-statement {
+    border-radius: 0;
+    width: 80vw;
+    height: max-content;
+    align-items: center;
+    background-color: lightgray;
+}
+
+.content-image {
+    min-width: 116px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.content-letter {
+    width: 100%;
+}
+
+.moviments-letter {
+    color: white;
+    font-size: 1.4em;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: calc(100% - 116.672px);
+}
+
+.content-parent {
+    width: 100vw;
+    overflow: auto;
+    max-height: calc(100vh - 140px);
+    min-height: calc(100vh - 140px);
+    background-color: white;
+    max-width: 600px;
+    padding: 10px;
+}
+
+.container-list {
+    width: 95%;
+    align-items: center;
+    display: flex;
+    list-style: none;
+    border-bottom: 1px solid lightgray;
+    padding-top: 10px;
+}
+
+.list-flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.left-grid {
+    align-self: auto;
+    margin-right: 30px;
+}
+
+.rigth-grid {
+    margin-left: auto;
+    padding-right: 80px;
+    white-space: nowrap;
+}
+
+.coin-img {
+    padding: 10px;
+    margin: 10px;
+}
+
+.list-date {
+    font-weight: 700;
+    color: rgb(138, 138, 138);
+}
+
+.list-type {
+    font-weight: 700;
+}
+
+.list-value {
+    color: rgb(37, 165, 37);
+    font-weight: 700;
+}
+
+.list-balance {
+    font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+    .rigth-grid {
+        padding: 0;
+        margin-left: 80px;
+        transition: 0.5s;
+    }
+}

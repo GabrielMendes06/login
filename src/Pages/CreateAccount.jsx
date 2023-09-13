@@ -1,4 +1,4 @@
-import Title from "../components/Title";
+import Title from "../components/HomePage/Title";
 import FormRegister from "../components/FormRegister";
 import { useState } from "react";
 import axios from "axios";
@@ -16,8 +16,8 @@ function CreateAccount() {
 
 
   const registerAccount = () => {
-    if (name && surname && email && password !== "" && emailRegex.test(email) == true) {
-      axios.post("https://nodecruddeploy-api.onrender.com/api/new-user", {
+    if (name && surname && email && password !== "" && emailRegex.test(email) === true) {
+      axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/new-user`, {
       name: name + " " + surname,
       email: email,
       password: password

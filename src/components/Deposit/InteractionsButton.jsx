@@ -7,7 +7,7 @@ function InteractionsButton(props) {
                 className="theme-icon"/>
             </div>
             <div>
-                <p className="money-p">put money</p>
+                <p className="money-p">{props.text}</p>
             </div>
         </div>
     )

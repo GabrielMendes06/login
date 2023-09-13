@@ -1,5 +1,5 @@
-import Title from "../components/Title";
-import Submit from "../components/Submit";
+import Title from "../components/HomePage/Title";
+import Submit from "../components/HomePage/Submit";
 
 function Main() {
 
@@ -14,7 +14,6 @@ function Main() {
         </div>
         <div className="formulario">
           <Title title={"Sign In"} id={"title-sign"}/>
-          <form action="login.php" method="post" autoComplete="on"></form>
           <Submit />
         </div> 
       </section>

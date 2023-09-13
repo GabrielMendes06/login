@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import Inputs from "./Input-text";
+import InputText from "../Input-text";
 import { useState} from "react";
 import axios from "axios";
-import Input from "./Input";
+import Input from "../Input";
 
 
 function Submit(props) {
   const submitLogin = () => {
     axios
-      .post("https://nodecruddeploy-api.onrender.com/api/users", {
+      .post(`${process.env.REACT_APP_API_BASE_URL}/api/users`, {
         email: resultEmail,
         password: resultPassword,
       })
@@ -42,26 +42,34 @@ function Submit(props) {
     setResultPassword(r);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      submitLogin()
+    }
+  };
+
   return (
     <div className="content-inputs">
-      <Inputs
+      <InputText
         description={"email"}
         id={"iemail"}
         placeHolder={"Type your email"}
         autoComplete={"email"}
         iconName={"person"}
         handleResult={updateResultEmail}
+        onKeyPress={handleKeyPress}
       />
-      <Inputs
+      <InputText
         description={"password"}
         id={"isen"}
         placeHolder={"Type your password"}
         autoComplete={"current-password"}
         iconName={"key"}
         handleResult={updateResultPassword}
+        onKeyPress={handleKeyPress}
       />
       <p className="incorrect-user" style={{ opacity: iopacity }}>
-        Email ou senha incorretos
+        Incorrect email or password
       </p>
       <div className="box-inputs">
         <Input
@@ -83,3 +91,4 @@ function Submit(props) {
 }
 
 export default Submit;
+ 

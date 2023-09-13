@@ -27,6 +27,7 @@ function Inputs(props) {
           setValor(e.target.value);
         }}
         value={valor}
+        onKeyPress={props.onKeyPress}
       ></input>
 
       <label htmlFor={props.id} className="inputs">

@@ -5,19 +5,25 @@ import { BrowserRouter } from 'react-router-dom';
 import { GetIdProvider } from './context/GetId'
 import { BalanceProvider } from './context/ThemeContext';
 import { ModalProvider } from './context/OpenModal';
+import { ModalTransferProvider } from './context/OpenTransfer';
+import { TransferValueProvider } from './context/TransferValueModal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode> 
-    <ModalProvider>
-      <GetIdProvider>
-        <BalanceProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </BalanceProvider>
-      </GetIdProvider>
-    </ModalProvider>
+    <TransferValueProvider>
+      <ModalTransferProvider>
+        <ModalProvider>
+          <GetIdProvider>
+            <BalanceProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </BalanceProvider>
+          </GetIdProvider>
+        </ModalProvider>
+      </ModalTransferProvider>
+    </TransferValueProvider>
   </React.StrictMode>
 );
 

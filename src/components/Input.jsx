@@ -1,6 +1,6 @@
 function Input(props) {
   return (
-    <div className="">
+    <>
       <label htmlFor={props.id} className={props.labelClass}>{props.labelValue}</label>
       <input
         step={props.step}
@@ -10,10 +10,9 @@ function Input(props) {
         id={props.id}
         onClick={props.onClick}
         onChange={props.onChange}
-        defaultValue={props.defaltValue}
         onSelect={props.onSelect}
       ></input>
-    </div>
+    </>
   );
 }
 

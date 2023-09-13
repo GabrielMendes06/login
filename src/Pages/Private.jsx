@@ -1,25 +1,34 @@
-import InteractionsButton from "../components/InteractionsButton";
 import { useState, useEffect, useContext } from "react";
-import Home from "../images/pagina-inicial.png"
-import Help from "../images/ponto-de-interrogacao.png"
-import Arrow from "../images/seta-direita.png"
-import addMoney from "../images/colocar.png"
-import Modal from "../components/Modal";
-import AddBalance from "../components/AddBalance";
-import { GetId } from "../context/GetId";
-import { OpenModal } from "../context/OpenModal";
 import axios from "axios";
 
+//Contexts
+import { GetId } from "../context/GetId";
+import { OpenModal } from "../context/OpenModal";
+import { OpenTransferModal } from "../context/OpenTransfer";
+
+//Images
+import Arrow from "../images/seta-direita.png"
+import addMoney from "../images/colocar.png"
+import Transfer from "../images/transferencia-bancaria.png"
+
+//Components
+import InteractionsButton from "../components/Deposit/InteractionsButton";
+import Modal from "../components/Modal";
+import AddBalance from "../components/Deposit/AddBalance";
+import Header from "../components/PrivatePage/Header";
+import Balance from "../components/PrivatePage/Balance";
+import TransferValue from "../components/Transfer/TransferValue";
 
 function Private() {
 
   const [name, setName] = useState("")
   const [balance, setBalance] = useState(0)
-  const {id, toggleId} = useContext(GetId)
+  const {toggleId} = useContext(GetId)
   const {openModal, setModalOpen} = useContext(OpenModal)
+  const {openTransferModal, setTransferModalOpen} = useContext(OpenTransferModal)
   
   const getUser = (id) => {
-    axios.get(`https://nodecruddeploy-api.onrender.com/api/users/getuser/${id}`)
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/users/getuser/${id}`)
     .then(function (response) {
       setBalance(response.data.balance)
       localStorage.setItem("balance", response.data.balance)
@@ -39,42 +48,47 @@ function Private() {
     setName(userName)
     setBalance(balance)
     getUser(id)
-  },[openModal])
+  },[openTransferModal, openModal])
 
   return (
     <div className="container">
-      <header className="header">
-        <div className="icon-grid">
-          <img src={Home} id="home-icon" className="icon" alt="home" />
-          <img src={Help} id="help" className="icon" alt="?" />
-        </div>
-        <p className="header-paragraph">Welcome, {name}</p>
-      </header>
+        <Header 
+        userName={name}
+        />
       <div className="application-body">
-        <InteractionsButton 
-        modalFunction={() => setModalOpen(true)}
-        image={addMoney}/>
-        <Modal 
-        isOpen={openModal}
-        setModalOpen={setModalOpen}
-        >
-          <AddBalance />
-        </Modal>
-        <div className="container-balance">          
-          <div className="content">            
-            <div className="now-whrap-p">
-              <p className="balance-paragraph">Balance: </p>
-              <p className="balance-paragraph">R${balance}</p>
-            </div>
-            <div className="now-whrap-p border-top">
-              <p className="balance-paragraph final-paragraph">Access extract</p>
-              <img src={Arrow} alt="rigth arrow" className="arrow"/>
-            </div>
-          </div>
+        <div className="buttons-grid">
+          <InteractionsButton
+          modalFunction={() => setModalOpen(true)}
+          image={addMoney}
+          text={"deposit money"}
+          />
+          <InteractionsButton
+          modalFunction={() => setTransferModalOpen(true)}
+          text={"Transfer"}
+          image={Transfer}
+          />
         </div>
+
+          <Modal 
+          isOpen={openTransferModal}
+          setModalOpen={setTransferModalOpen}
+          >
+            <TransferValue />
+          </Modal>
+
+          <Modal 
+          isOpen={openModal}
+          setModalOpen={setModalOpen}
+          >
+            <AddBalance />
+          </Modal>
+
+        <Balance 
+        imageArrow={Arrow}
+        balance={balance}
+        />
       </div>
-    </div>
-    
+    </div>    
   );
 }
 
